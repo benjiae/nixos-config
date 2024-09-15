@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+read -p "what's the commit message: " commit;
+git add .;
+git commit -m "$commit";
+git push
