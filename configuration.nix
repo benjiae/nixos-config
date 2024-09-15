@@ -1,4 +1,4 @@
-# Edit this configuration file to define what should be installed on
+# Edit this configuration file to define what should be installed o0
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
@@ -60,9 +60,7 @@
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAX1lgmN92bPi0736L0IJLoY7UsBB0y4BX7tIbDXvXvD benjaminang2009@gmail.com"
     ];
-    packages = with pkgs; [
-    	zsh
-    ];
+    packages = with pkgs; [];
     shell = pkgs.zsh;
   };
 
@@ -76,6 +74,9 @@
     };
     openFirewall = true;
   };
+
+	# ZSH
+	programs.zsh.enable = true;
 
   # Enable automatic login for the user.
   services.getty.autologinUser = "benjae";
