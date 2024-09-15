@@ -7,8 +7,7 @@
 	
 	imports = [
 		./programs/config.nix
-		./programs/noconfig.nix
-	
+		./programs/noconfig.nix	
 		./configs/user-bins.nix
 	];
 }
