@@ -8,5 +8,5 @@
 	imports = [
 		./programs/config.nix
 		./programs/noconfig.nix
-	]
+	];
 }
