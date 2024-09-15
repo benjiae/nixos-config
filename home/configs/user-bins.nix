@@ -2,6 +2,6 @@
 
 {
 	# Nix scripts
-	home.file."${config.home.homeDirectory}/.local/bin/commit-nix".source = ../../commit-nix
-	home.file."${config.home.homeDirectory}/.local/bin/update".source = ../../update
+	home.file.".local/bin/commit-nix".source = ../../commit-nix
+	home.file.".local/bin/update".source = ../../update
 }
