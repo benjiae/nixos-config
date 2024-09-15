@@ -1,11 +1,8 @@
-# lol
 {
   description = "NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
   };
 
   outputs = inputs@{ nixpkgs, home-manager, ... }: {
@@ -14,17 +11,12 @@
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true; 
-	    home-manager.users.benjae = import ./home/main.nix;
-
-            # Optionally, use home-manager.extraSpecialArgs to pass
-            # arguments to home.nix
-          }
         ];
-      };
+			};
     };
   };
+
+	imports = [
+		./home/hm-flake.nix
+	];
 }
