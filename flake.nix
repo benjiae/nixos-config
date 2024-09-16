@@ -26,6 +26,9 @@
       el-wiwi-nix = nixpkgs.lib.nixosSystem {
 				modules = [
           ./configuration.nix
+	home-manager.nixosModules.home-manager {
+	home-manager.users.benjae = import ./home/main.nix;
+}
 	];			
 };
 	homeConfigurations = {
@@ -33,7 +36,7 @@
 				inherit pkgs;
 				extraSpecialArgs = { inherit username; inherit hostname; inherit nixvim; };
 				modules = [
-					./home/main.nix
+					./home/modules.nix
 				];
 			};
 		};

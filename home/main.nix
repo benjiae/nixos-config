@@ -1,14 +1,12 @@
-{ config, pkgs, username, nixvim, ...}:
+{ config, pkgs, ...}:
 
 {
-	home.username = "${username}";
-	home.homeDirectory = "/home/${username}";
+	home.username = "benjae";
+	home.homeDirectory = "/home/benjae";
 	home.stateVersion = "24.05";
 	
 	imports = [
 		./programs
-		./modules/neovim.nix
-		nixvim.homeManagerModules.nixvim
 		./configs/user-bins.nix
 	];
 }
