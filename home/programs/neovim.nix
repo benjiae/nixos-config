@@ -132,7 +132,7 @@
 		};
 
   extraConfigLua = ''
-    require("telescope").load_extension("lazygit")
+  require("telescope")
 
     luasnip = require("luasnip")
 
