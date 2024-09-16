@@ -1,5 +1,3 @@
-{ config, pkgs, ... }:
-
 {
 	home = {
 		# actually make it detect the files	
