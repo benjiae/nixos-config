@@ -18,7 +18,7 @@
 		zplug = {
 			enable = true;
 			plugins = [
-				{ name = "nullxception/roundy"; tags = [ as:theme from:github use:roundy.zsh]; }
+				{ name = "nullxception/roundy"; tags = [ as:theme ]; }
 			];
 		};
 	};

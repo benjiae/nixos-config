@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
+current_dir="$(pwd)"
 read -p "what's the commit message: " commit;
-git add /etc/nixos/;
+cd /etc/nixos
+git add .;
 git commit -m "$commit";
-git push
+git push;
+cd $current_dir
