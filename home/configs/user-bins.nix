@@ -1,13 +1,10 @@
-{ config, ... }:
 {
 	home = {
 		# actually make it detect the files	
-		sessionPath = [
-			"/home/benjae/.local/bin"
-		];
+		sessionPath = [ "$HOME/.local/bin"];
 		## The files
 		# Nix scripts
-		file."/home/benjae/.local/bin/commit-nix".source = ../../commit-nix;
-		file."/home/benjae/.local/bin/update".source = ../../update;
+		file."$HOME/.local/bin/commit-nix".source = ../../commit-nix;
+		file."$HOME/.local/bin/update".source = ../../update;
 	};
 }
