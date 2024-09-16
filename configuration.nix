@@ -7,7 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hosts/vmware/hardware-configuration.nix # VMWare
+      ./machines/vmware/hardware-configuration.nix # VMWare
       # ./hosts/1050ti/hardware-configuration.nix # Main PC
     ];
 

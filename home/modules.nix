@@ -1,7 +1,7 @@
 { config, pkgs, username, nixvim, ...}:
 {
 	imports = [
-		./modules/nixvim.nix
+		./modules/neovim.nix
 		nixvim.homeManagerModules.nixvim
 	]
 }
