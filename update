@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
-pushd /etc/nixos
+pushd /etc/nixos || exit
 git add .;
+popd || exit
 sudo nixos-rebuild switch
-if [ $? -eq 0 ]; then
-	bash /etc/nixos/commit-nix
-else
-	echo "it failed lollll"
-fi
