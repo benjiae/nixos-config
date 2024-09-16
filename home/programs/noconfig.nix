@@ -12,5 +12,10 @@
 		fzf
 
 		btop
-	];
+  ];
+
+  programs = {
+    fzf.catppuccin.enable = true;
+    btop.catppuccin.enable = true;   
+  };
 }

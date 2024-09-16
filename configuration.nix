@@ -10,6 +10,8 @@
       ./machines/vmware/hardware-configuration.nix # VMWare
       # ./hosts/1050ti/hardware-configuration.nix # Main PC
     ];
+  # VMWare tools
+  virtualisation.vmware.guest.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -44,10 +46,16 @@
   };
 
   # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "latam";
-    variant = "";
+  services.xserver = {
+    enable = true;
+    xkb = {
+      layout = "latam";
+      variant = "";
+    };
   };
+
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   # Configure console keymap
   console.keyMap = "la-latin1";
@@ -93,7 +101,13 @@
     wget
     git  
   ];
+  
+  environment.plasma6.excludePackages = with pkgs.kdePackages; [
+    plasma-browser-integration
+    konsole
+    oxygen 
 
+  ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

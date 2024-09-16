@@ -1,14 +1,14 @@
 {
 	programs.nixvim = {
 		enable = true;
-                globals.mapleader = " ";
-                opts = {
-			number = true;
-			relativenumber = true;
-			shiftwidth = 2;
-			tabstop = 2;
-                        mouse = "a";
-                      };
+      globals.mapleader = " ";
+      opts = {
+			  number = true;
+			  relativenumber = true;
+			  shiftwidth = 2;
+			  tabstop = 2;
+        mouse = "a";
+      };
 
 		plugins = {
 			lualine.enable = true;
