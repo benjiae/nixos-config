@@ -1,3 +1,4 @@
+{ config, ... }:
 {
 	home = {
 		# actually make it detect the files	
