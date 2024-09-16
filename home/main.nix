@@ -6,9 +6,8 @@
 	home.stateVersion = "24.05";
 	
 	imports = [
-		./programs/simple-config.nix
-		./programs/noconfig.nix	
-		./programs/zsh.nix
+		./programs
+		./programs/neovim
 
 		./configs/user-bins.nix
 	];

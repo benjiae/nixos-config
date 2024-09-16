@@ -25,6 +25,15 @@
 					sha256 = "1jcb5cg1539iy89vm9d59g8lnp3dm0yv88mmlhkp9zwx3bihwr06";
 				};
 			}
+			{
+				name = "fzf-tab";
+				src = pkgs.fetchFromGitHub {
+					owner = "Aloxaf";
+					repo = "fzf-tab";
+					rev = "v1.1.2";
+					sha256 = "061jjpgghn8d5q2m2cd2qdjwbz38qrcarldj16xvxbid4c137zs2";
+				};
+			}
 		];
 	};
 }
