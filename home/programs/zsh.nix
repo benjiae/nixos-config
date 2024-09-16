@@ -17,7 +17,7 @@
 
 		plugins = [
 			{
-				name = "pure"
+				name = "pure";
 				src = pkgs.fetchFromGithub {
 					owner = "sindresorhus";
 					repo = "pure";
