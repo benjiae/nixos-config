@@ -19,27 +19,24 @@
 		let
       system = "x86_64-linux";
 			pkgs = import nixpkgs { inherit system; };
-    in {
+    	username = "benjae";
+	hostname = "el-wiwi-nix";
+	in {
 		nixosConfigurations = {
       el-wiwi-nix = nixpkgs.lib.nixosSystem {
 				modules = [
           ./configuration.nix
-         home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true; 
-	    			# home-manager.users.benjae = import ./home/main.nix;
-					}
-        ];
-			};
-			home-manager = home-manager.lib.homeManagerConfiguration {
+	];			
+};
+	homeConfigurations = {
+			benjae = home-manager.lib.homeManagerConfiguration {
 				inherit pkgs;
-				extraSpecialArgs = {};
+				extraSpecialArgs = { inherit username; inherit hostname; inherit nixvim; };
 				modules = [
 					./home/main.nix
-					nixvim.homeManagerModules.nixvim
 				];
 			};
 		};
+};
   };
 }

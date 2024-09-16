@@ -7,7 +7,6 @@
 	
 	imports = [
 		./programs
-		./programs/neovim
 
 		./configs/user-bins.nix
 	];
