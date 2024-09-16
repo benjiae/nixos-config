@@ -14,12 +14,18 @@
 			size = 10000;
 			path = "${config.xdg.dataHome}/zsh/history";
 		};
-	
-		zplug = {
-			enable = true;
-			plugins = [
-				{ name = "nullxception/roundy"; tags = [ as:theme ]; }
-			];
-		};
+
+		plugins = [
+			{
+				name = "pure"
+				src = pkgs.fetchFromGithub {
+					owner = "sindresorhus";
+					repo = "pure";
+					rev = "v1.23.0"
+					sha256 = "1jcb5cg1539iy89vm9d59g8lnp3dm0yv88mmlhkp9zwx3bihwr06";
+				};
+			}
+		];
+
 	};
 }
