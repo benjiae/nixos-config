@@ -27,18 +27,14 @@
 					modules = [
 						./configuration.nix
 						home-manager.nixosModules.home-manager {
+							home-manager.useGlobalPkgs = true;
+							home-manager.useUserPackages = true;
+							home-manager.sharedModules = [
+								nixvim.homeManagerModules.nixvim
+							];
 							home-manager.users.benjae = import ./home/main.nix;
 						}	
 					];			
-				};
-			};
-			homeConfigurations = {
-				benjae = home-manager.lib.homeManagerConfiguration {
-					inherit pkgs;
-					extraSpecialArgs = { inherit username; inherit hostname; inherit nixvim; };
-					modules = [
-						./home/modules.nix
-					];
 				};
 			};
   	};

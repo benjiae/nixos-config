@@ -1,7 +1,6 @@
 {
 	programs.nixvim = {
 		enable = true;
-		colorschemes.catppuccin.enable = true;
 		options = {
 			number = true;
 			relativenumber = true;
@@ -17,7 +16,6 @@
 			trouble.enable = true;
 			luasnip.enable = true;
 			noice.enable = true;
-			lua-ls.enable = true;
 			nix.enable = true;
 			cmp-nvim-lsp.enable = true;
 			cmp-buffer.enable = true;
@@ -45,6 +43,7 @@
 						shfmt.enable = true;
 						nixpkgs_fmt.enable = true;
 						prettier.enable = true;
+						prettier.disableTsServerFormatter = true;
 						stylua.enable = true;
 						alejandra.enable = true;
 					};
@@ -73,7 +72,7 @@
 				};
 			};
 			
-			neotree = {
+			neo-tree = {
 				enable = true;
 				enableDiagnostics = true;
 				enableGitStatus = true;
@@ -92,38 +91,42 @@
 					nil-ls.enable = true;
 					bashls.enable = true;
 					clangd.enable = true;
+
+					lua-ls.enable = true;
 				};
 			};
 			
 			cmp = {
 				enable = true;
-				settings.autoEnableSources = true;
-				snippet.expand = "luasnip";
-				window.completion.border = "solid";
-				window.documentation.border = "solid";
-				sources = [
-					{ name = "nvim_lsp"; }
-					{ name = "emoji"; }
-					{
-						name = "buffer";
-						option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
-						keywordLength = 3;
-					}
-					{ name = "path"; keywordLength = 3; }
-					{ name = "luasnip"; keywordLength = 3; }
-				];
+				settings = {
+					autoEnableSources = true;
+					snippet.expand = "luasnip";
+					window.completion.border = "solid";
+					window.documentation.border = "solid";
+					sources = [
+						{ name = "nvim_lsp"; }
+						{ name = "emoji"; }
+						{
+							name = "buffer";
+							option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
+							keywordLength = 3;
+						}
+						{ name = "path"; keywordLength = 3; }
+						{ name = "luasnip"; keywordLength = 3; }
+					];
 
-				mapping = {
-          "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
-          "<C-j>" = "cmp.mapping.select_next_item()";
-          "<C-k>" = "cmp.mapping.select_prev_item()";
-          "<C-e>" = "cmp.mapping.abort()";
-          "<C-b>" = "cmp.mapping.scroll_docs(-4)";
-          "<C-f>" = "cmp.mapping.scroll_docs(4)";
-          "<C-Space>" = "cmp.mapping.complete()";
-          "<CR>" = "cmp.mapping.confirm({ select = true })";
-          "<S-CR>" = "cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })";
-        };
+					mapping = {
+					  "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
+					  "<C-j>" = "cmp.mapping.select_next_item()";
+					  "<C-k>" = "cmp.mapping.select_prev_item()";
+					  "<C-e>" = "cmp.mapping.abort()";
+					  "<C-b>" = "cmp.mapping.scroll_docs(-4)";
+					  "<C-f>" = "cmp.mapping.scroll_docs(4)";
+					  "<C-Space>" = "cmp.mapping.complete()";
+					  "<CR>" = "cmp.mapping.confirm({ select = true })";
+					  "<S-CR>" = "cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })";
+					};
+				};
 			};
 		};
 
@@ -164,5 +167,40 @@
   --      end
   -- }
        })  '';
-	};
+
+  colorschemes.catppuccin = {
+    enable = true;
+    settings = {
+      no_bold = false;
+      no_italic = false;
+      no_underline = false;
+      transparent_background = true;
+      integrations = {
+        cmp = true;
+        noice = true;
+        notify = true;
+        neotree = true;
+        gitsigns = true;
+        illuminate.enabled = true;
+        treesitter = true;
+        treesitter_context = true;
+        telescope.enabled = true;
+        indent_blankline.enabled = true;
+        mini.enabled = true;
+        native_lsp = {
+          enabled = true;
+          inlay_hints = {
+            background = true;
+          };
+          underlines = {
+            errors = ["underline"];
+            hints = ["underline"];
+            information = ["underline"];
+            warnings = ["underline"];
+          };
+        };
+      };
+    };
+  };
+};
 }
