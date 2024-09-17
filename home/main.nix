@@ -7,6 +7,6 @@
 	imports = [
     ./desktop
     ./programs
-		./configs/user-bins.nix
+		./configs
   ];
 }

@@ -12,6 +12,7 @@
 		fzf
 
 		btop
+    vesktop
   ];
 
   programs = {
