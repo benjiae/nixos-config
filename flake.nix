@@ -22,7 +22,7 @@
     };
 	};
 
-  outputs = inputs@{ nixpkgs, home-manager, nixvim, plasma-manager, catppuccin, ... }: {
+  outputs = inputs@{ nixpkgs, nixpkgs-unstable, home-manager, nixvim, plasma-manager, catppuccin, ... }: {
 			nixosConfigurations = {
       	el-wiwi-nix = nixpkgs.lib.nixosSystem {
 					modules = [
