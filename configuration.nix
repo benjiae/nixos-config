@@ -66,7 +66,7 @@
     description = "benjae";
     extraGroups = [ "networkmanager" "wheel" ];
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAX1lgmN92bPi0736L0IJLoY7UsBB0y4BX7tIbDXvXvD benjaminang2009@gmail.com"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPqD4DWQJam/6FCHMjcSqGCeXI89EbTVNu/jQ4fZOL52 benja.ae@proton.me"
     ];
     packages = with pkgs; [];
     shell = pkgs.zsh;
@@ -79,6 +79,7 @@
       X11Forwarding = true;
       PermitRootLogin = "no";
       PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
     };
     openFirewall = true;
   };
